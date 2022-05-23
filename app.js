@@ -116,7 +116,7 @@ app.get('/callback', function(req, res) { //this means if our website.com/callba
         //     access_token: access_token,
         //     refresh_token: refresh_token
         //   }));
-        res.render('/Users/irenechoi/Desktop/spotify_new/views/callback.html',{access_token:access_token,refresh_token:refresh_token});
+        res.render('/Users/irenechoi/Desktop/spotify_new/callback.html',{access_token:access_token,refresh_token:refresh_token});
       } else {
         res.redirect('/#' +
           querystring.stringify({
