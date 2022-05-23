@@ -48,7 +48,7 @@ app.use(express.static(__dirname + '/public'))
 //parameter name: route,function
 
 app.get('/',function(req,res) {
-  res.sendFile('/Users/irenechoi/Desktop/spotify_new/index.html'); //this means by default load index.html
+  res.sendFile(__dirname + '/index.html'); //this means by default load index.html
 });
 app.get('/login', function(req, res) { 
   res.cookie(stateKey, state);
@@ -117,7 +117,7 @@ app.get('/callback', function(req, res) { //this means if our website.com/callba
         //     access_token: access_token,
         //     refresh_token: refresh_token
         //   }));
-        res.render('/Users/irenechoi/Desktop/spotify_new/callback.html',{access_token:access_token,refresh_token:refresh_token});
+        res.render(__dirname + '/callback.html',{access_token:access_token,refresh_token:refresh_token});
       } else {
         res.redirect('/#' +
           querystring.stringify({
