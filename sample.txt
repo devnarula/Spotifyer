@@ -1,0 +1,6 @@
+    // request(authOptions)
+    //   .then(data => {
+    //     console.log(data);
+    //     res.render(__dirname + '/callback.html',{access_token:data.access_token,refresh_token:data.refresh_token});
+    //   })
+    //   .catch(err => console.log("gay2"));
