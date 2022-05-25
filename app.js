@@ -6,6 +6,7 @@ var cors = require('cors');
 var querystring = require('querystring');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+const { fdatasync } = require('fs');
 
 //credentials
 var client_id = '7438696c99124ed09dad18d320af4408'; // Your client id
@@ -107,9 +108,9 @@ app.get('/callback', function(req, res) { //this means if our website.com/callba
           res.cookie(`access_token`,`${data.access_token}`)
           res.render(__dirname + '/callback.html',{access_token:data.access_token,refresh_token:data.refresh_token});
         })
-        .catch (err => console.log("gay"));
+        .catch (err => console.log("error getting user details"));
       })
-      .catch(err => console.log("gay2"));
+      .catch(err => console.log("error getting access token"));
   }
 });
 app.post('/create_playlist', function(req, res){
