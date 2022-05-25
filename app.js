@@ -1,4 +1,3 @@
-
 //import libraries
 //change
 var express = require('express'); // Express web server framework
@@ -12,7 +11,7 @@ var bodyParser = require('body-parser');
 var client_id = '7438696c99124ed09dad18d320af4408'; // Your client id
 var client_secret = '97131d69252f41fbb077b277bb5d375d'; // Your secret
 var redirect_uri = 'http://localhost:8888/callback'; // Your redirect uri
-var scope = 'user-read-private user-read-email';
+var scope = 'user-read-private user-read-email playlist-modify-public playlist-modify-private';
 var username = ""
 
 //cookie state
@@ -53,7 +52,7 @@ app.get('/login', function(req, res) {
   res.cookie(stateKey, state);
 
   // your application requests authorization
-  var scope = 'user-read-private user-read-email';
+  // var scope = 'user-read-private user-read-email';
   res.redirect('https://accounts.spotify.com/authorize?' +
     querystring.stringify({
       response_type: 'code',
@@ -104,6 +103,8 @@ app.get('/callback', function(req, res) { //this means if our website.com/callba
         request(options)
         .then (data2 => { 
           console.log(data2);
+          res.cookie(`id`,`${data2.id}`)
+          res.cookie(`access_token`,`${data.access_token}`)
           res.render(__dirname + '/callback.html',{access_token:data.access_token,refresh_token:data.refresh_token});
         })
         .catch (err => console.log("gay"));
@@ -111,10 +112,35 @@ app.get('/callback', function(req, res) { //this means if our website.com/callba
       .catch(err => console.log("gay2"));
   }
 });
-app.post('/create_playlist', function(request, response){
-  console.log(request.body.user.name); 
-  var playlist_name = request.body.user.name; // name of playlist
+app.post('/create_playlist', function(req, res){
+  console.log(req.body.user.name); 
+  var playlist_name = req.body.user.name; // name of playlist
+  var user_id = req.cookies.id
+  console.log(user_id)
+  // var dataString = '';
 
+  var ops = {
+    url: `https://api.spotify.com/v1/users/${user_id}/playlists`,
+    method: 'POST',
+    headers: {
+      'Authorization': 'Bearer ' + req.cookies.access_token,
+      'Content-Type': 'application/json',
+    },
+    body: {
+      'name': `${playlist_name}`,
+      'public': false
+  },
+    json: true
+  };
+  request(ops)
+  .then(data => {
+    console.log(data);
+    res.send("Success!");
+  })
+  .catch (err => {
+    console.log(err);
+    res.send("failed error git gud!");
+  });
 });
 
 console.log('Listening on 8888');
