@@ -144,5 +144,27 @@ app.post('/create_playlist', function(req, res){
   });
 });
 
+app.post('/searchyt',(req,res) => {
+  var ytname = req.body.playlist.name;
+  ytname = ytname.replace(/^https?:\/\//, '')
+  var url = `https://ea72-38-117-127-218.ngrok.io/playlistsearch/?url=${encodeURI(ytname)}`;
+  console.log(url)
+  var ops = {
+    url: url,
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    json: true
+  };
+  request(ops)
+  .then(data=>{
+    console.log(data)
+  })
+  .catch(err=>{
+    console.log(err)
+  })
+})
+
 console.log('Listening on 8888');
 app.listen(8888);
