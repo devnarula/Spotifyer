@@ -3,6 +3,7 @@ from dotenv import load_dotenv
 import os
 from apiclient.discovery import build
 from googleapiclient import discovery
+from fastapi import FastAPI
 load_dotenv('.env')
 api_key = os.environ.get('API_KEY')
 youtube = build('youtube', 'v3', developerKey = api_key)
@@ -57,3 +58,8 @@ def names(url):
             break
         count += 1
     return results
+
+app = FastAPI()
+@app.post('/playlistsearch/')
+def summarize(url: str):
+    return {'lst': names(url)}
