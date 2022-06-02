@@ -135,8 +135,9 @@ app.post('/create_playlist', function(req, res){
   };
   request(ops)
   .then(data => {
-    console.log(data);
-    res.send("Success!");
+    // console.log(data);
+    res.cookie(`playlist_id`,`${data.id}`)
+    res.render(__dirname + '/yt.html', {'name' : 'ur gay'});
   })
   .catch (err => {
     console.log(err);
@@ -147,7 +148,7 @@ app.post('/create_playlist', function(req, res){
 app.post('/searchyt',(req,res) => {
   var ytname = req.body.playlist.name;
   ytname = ytname.replace(/^https?:\/\//, '')
-  var url = `https://ea72-38-117-127-218.ngrok.io/playlistsearch/?url=${encodeURI(ytname)}`;
+  var url = `https://ea72-38-117-127-218.ngrok.io/playlistsearch/?url=${encodeURIComponent(ytname)}`;
   console.log(url)
   var ops = {
     url: url,
@@ -159,7 +160,62 @@ app.post('/searchyt',(req,res) => {
   };
   request(ops)
   .then(data=>{
-    console.log(data)
+    console.log("test:",req.cookies)
+    var arr = data.lst;
+    for (let i  = 0; i<arr.length; i++) {
+      arr[i] = arr[i].replace(/ *\([^)]*\) */g, "");
+    }
+    // console.log(arr)
+    //write the loop here with array arr
+    var uris = ""
+    for (let i = 0; i < arr.length; i++){
+      var songname = arr[i];
+      var songops = {
+        url: `https://api.spotify.com/v1/search?q=${encodeURIComponent(songname)}&type=track`,
+        method: 'GET',
+        headers: {
+          'Authorization': 'Bearer ' + req.cookies.access_token,
+          'Content-Type': 'application/json',
+        },
+        json: true
+      };
+      request(songops)
+      .then(data => {
+        // console.log(data.tracks)
+        var uri = data.tracks.items[0].uri
+        console.log(uri)
+        uris += uri
+        if (i < arr.length-1) {
+        uris += ','
+        }
+        if (uris.length > 80) {
+          console.log("uris:",uris)
+          var playlistid = req.cookies.playlist_id
+          var addops = {
+          url: `https://api.spotify.com/v1/playlists/${playlistid}/tracks?uris=${encodeURIComponent(uris)}`,
+          method: 'POST',
+          headers: {
+            'Authorization': 'Bearer ' + req.cookies.access_token,
+            'Content-Type': 'application/json',
+          },
+          json: true
+        };
+        request(addops)
+        .then(dt => {
+          console.log("yay added the songs")
+        })
+        .catch(er => {
+          console.log("fuck failed to add the song to the playlist",er)
+    })
+        }
+      })
+      .catch (err => {
+        // console.log(songname)
+        console.log("ERROR!",err)
+      })
+    }
+
+    
   })
   .catch(err=>{
     console.log(err)

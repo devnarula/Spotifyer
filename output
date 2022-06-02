@@ -1,0 +1,494 @@
+https://accounts.spotify.com/authorize?response_type=token&client_id=7438696c99124ed09dad18d320af4408&scope=user-read-private%20user-read-email%20playlist-modify-public%20playlist-modify-private&redirect_uri=http%3A%2F%2Flocalhost%3A8888%2Fcallback&state=gDnwyY82HiqHTAWn
+Listening on 8888
+{
+  country: 'CA',
+  display_name: 'irene',
+  email: 'ychoi6422@gmail.com',
+  explicit_content: { filter_enabled: false, filter_locked: false },
+  external_urls: {
+    spotify: 'https://open.spotify.com/user/kmt08ris9mez1e1byams9y6ku'
+  },
+  followers: { href: null, total: 18 },
+  href: 'https://api.spotify.com/v1/users/kmt08ris9mez1e1byams9y6ku',
+  id: 'kmt08ris9mez1e1byams9y6ku',
+  images: [
+    {
+      height: null,
+      url: 'https://i.scdn.co/image/ab6775700000ee8565f8de548294c3d9f0ca8e1a',
+      width: null
+    }
+  ],
+  product: 'premium',
+  type: 'user',
+  uri: 'spotify:user:kmt08ris9mez1e1byams9y6ku'
+}
+ganesh
+kmt08ris9mez1e1byams9y6ku
+https://ea72-38-117-127-218.ngrok.io/playlistsearch/?url=www.youtube.com%2Fwatch%3Fv%3DmRD0-GxqHVo%26list%3DPLcirGkCPmbmFeQ1sm4wFciF03D_EroIfr
+test: {
+  id: 'kmt08ris9mez1e1byams9y6ku',
+  access_token: 'BQBVGK2yoGhZJhIUbxb08FcpHIWIhNJ0c_U0v7_cHo65Bpd9uj0ek6C1Wl1fDRQtI6GP34bLgpwduF1EfPi4OTMiRdsdPGt4PPgDT3odrRi2yqZq9cNTdc96BAd4d-5UwXVqWjdfDz_0StsamPrrQti3G6gBqo95dGLvvmbwMLqqX5xtl4KhUmX8y_i2phyyj-y4iGFFssrRFtTN_VqcaOcdfbZhQCnXXJSUt8ce9M8MGLib',
+  playlist_id: '22kCyu9ySxM5PIaLjqxjyd'
+}
+uris: 
+fuck failed to add the song to the playlist StatusCodeError: 400 - {"error":{"status":400,"message":"Error parsing JSON."}}
+    at new StatusCodeError (/Users/irenechoi/Desktop/spotify_new/node_modules/request-promise-core/lib/errors.js:32:15)
+    at Request.plumbing.callback (/Users/irenechoi/Desktop/spotify_new/node_modules/request-promise-core/lib/plumbing.js:104:33)
+    at Request.RP$callback [as _callback] (/Users/irenechoi/Desktop/spotify_new/node_modules/request-promise-core/lib/plumbing.js:46:31)
+    at Request.self.callback (/Users/irenechoi/Desktop/spotify_new/node_modules/request/request.js:185:22)
+    at Request.emit (node:events:526:28)
+    at Request.<anonymous> (/Users/irenechoi/Desktop/spotify_new/node_modules/request/request.js:1154:10)
+    at Request.emit (node:events:526:28)
+    at IncomingMessage.<anonymous> (/Users/irenechoi/Desktop/spotify_new/node_modules/request/request.js:1076:12)
+    at Object.onceWrapper (node:events:645:28)
+    at IncomingMessage.emit (node:events:538:35)
+    at endReadableNT (node:internal/streams/readable:1345:12)
+    at processTicksAndRejections (node:internal/process/task_queues:83:21) {
+  statusCode: 400,
+  error: { error: { status: 400, message: 'Error parsing JSON.' } },
+  options: {
+    url: 'https://api.spotify.com/v1/playlists/22kCyu9ySxM5PIaLjqxjyd/tracks?uris=',
+    method: 'POST',
+    headers: {
+      Authorization: 'Bearer BQBVGK2yoGhZJhIUbxb08FcpHIWIhNJ0c_U0v7_cHo65Bpd9uj0ek6C1Wl1fDRQtI6GP34bLgpwduF1EfPi4OTMiRdsdPGt4PPgDT3odrRi2yqZq9cNTdc96BAd4d-5UwXVqWjdfDz_0StsamPrrQti3G6gBqo95dGLvvmbwMLqqX5xtl4KhUmX8y_i2phyyj-y4iGFFssrRFtTN_VqcaOcdfbZhQCnXXJSUt8ce9M8MGLib',
+      'Content-Type': 'application/json'
+    },
+    json: true,
+    callback: [Function: RP$callback],
+    transform: undefined,
+    simple: true,
+    resolveWithFullResponse: false,
+    transform2xxOnly: false
+  },
+  response: <ref *1> IncomingMessage {
+    _readableState: ReadableState {
+      objectMode: false,
+      highWaterMark: 16384,
+      buffer: BufferList { head: null, tail: null, length: 0 },
+      length: 0,
+      pipes: [],
+      flowing: true,
+      ended: true,
+      endEmitted: true,
+      reading: false,
+      constructed: true,
+      sync: true,
+      needReadable: false,
+      emittedReadable: false,
+      readableListening: false,
+      resumeScheduled: false,
+      errorEmitted: false,
+      emitClose: true,
+      autoDestroy: true,
+      destroyed: true,
+      errored: null,
+      closed: true,
+      closeEmitted: true,
+      defaultEncoding: 'utf8',
+      awaitDrainWriters: null,
+      multiAwaitDrain: false,
+      readingMore: true,
+      dataEmitted: true,
+      decoder: null,
+      encoding: null,
+      [Symbol(kPaused)]: false
+    },
+    _events: [Object: null prototype] {
+      end: [Array],
+      close: [Array],
+      data: [Function (anonymous)],
+      error: [Function (anonymous)]
+    },
+    _eventsCount: 4,
+    _maxListeners: undefined,
+    socket: TLSSocket {
+      _tlsOptions: [Object],
+      _secureEstablished: true,
+      _securePending: false,
+      _newSessionPending: false,
+      _controlReleased: true,
+      secureConnecting: false,
+      _SNICallback: null,
+      servername: 'api.spotify.com',
+      alpnProtocol: false,
+      authorized: true,
+      authorizationError: null,
+      encrypted: true,
+      _events: [Object: null prototype],
+      _eventsCount: 10,
+      connecting: false,
+      _hadError: false,
+      _parent: null,
+      _host: 'api.spotify.com',
+      _readableState: [ReadableState],
+      _maxListeners: undefined,
+      _writableState: [WritableState],
+      allowHalfOpen: false,
+      _sockname: null,
+      _pendingData: null,
+      _pendingEncoding: '',
+      server: undefined,
+      _server: null,
+      ssl: [TLSWrap],
+      _requestCert: true,
+      _rejectUnauthorized: true,
+      parser: null,
+      _httpMessage: [ClientRequest],
+      [Symbol(res)]: [TLSWrap],
+      [Symbol(verified)]: true,
+      [Symbol(pendingSession)]: null,
+      [Symbol(async_id_symbol)]: 275,
+      [Symbol(kHandle)]: [TLSWrap],
+      [Symbol(kSetNoDelay)]: false,
+      [Symbol(lastWriteQueueSize)]: 0,
+      [Symbol(timeout)]: null,
+      [Symbol(kBuffer)]: null,
+      [Symbol(kBufferCb)]: null,
+      [Symbol(kBufferGen)]: null,
+      [Symbol(kCapture)]: false,
+      [Symbol(kBytesRead)]: 0,
+      [Symbol(kBytesWritten)]: 0,
+      [Symbol(connect-options)]: [Object],
+      [Symbol(RequestTimeout)]: undefined
+    },
+    httpVersionMajor: 1,
+    httpVersionMinor: 1,
+    httpVersion: '1.1',
+    complete: true,
+    rawHeaders: [
+      'content-type',
+      'application/json; charset=utf-8',
+      'cache-control',
+      'private, max-age=0',
+      'x-robots-tag',
+      'noindex, nofollow',
+      'access-control-allow-origin',
+      '*',
+      'access-control-allow-headers',
+      'Accept, App-Platform, Authorization, Content-Type, Origin, Retry-After, Spotify-App-Version, X-Cloud-Trace-Context, client-token, content-access-token',
+      'access-control-allow-methods',
+      'GET, POST, OPTIONS, PUT, DELETE, PATCH',
+      'access-control-allow-credentials',
+      'true',
+      'access-control-max-age',
+      '604800',
+      'Content-Length',
+      '79',
+      'strict-transport-security',
+      'max-age=31536000',
+      'x-content-type-options',
+      'nosniff',
+      'vary',
+      'Accept-Encoding',
+      'date',
+      'Thu, 02 Jun 2022 04:59:46 GMT',
+      'server',
+      'envoy',
+      'Via',
+      'HTTP/2 edgeproxy, 1.1 google',
+      'Alt-Svc',
+      'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000',
+      'Connection',
+      'close'
+    ],
+    rawTrailers: [],
+    aborted: false,
+    upgrade: false,
+    url: '',
+    method: null,
+    statusCode: 400,
+    statusMessage: 'Bad Request',
+    client: TLSSocket {
+      _tlsOptions: [Object],
+      _secureEstablished: true,
+      _securePending: false,
+      _newSessionPending: false,
+      _controlReleased: true,
+      secureConnecting: false,
+      _SNICallback: null,
+      servername: 'api.spotify.com',
+      alpnProtocol: false,
+      authorized: true,
+      authorizationError: null,
+      encrypted: true,
+      _events: [Object: null prototype],
+      _eventsCount: 10,
+      connecting: false,
+      _hadError: false,
+      _parent: null,
+      _host: 'api.spotify.com',
+      _readableState: [ReadableState],
+      _maxListeners: undefined,
+      _writableState: [WritableState],
+      allowHalfOpen: false,
+      _sockname: null,
+      _pendingData: null,
+      _pendingEncoding: '',
+      server: undefined,
+      _server: null,
+      ssl: [TLSWrap],
+      _requestCert: true,
+      _rejectUnauthorized: true,
+      parser: null,
+      _httpMessage: [ClientRequest],
+      [Symbol(res)]: [TLSWrap],
+      [Symbol(verified)]: true,
+      [Symbol(pendingSession)]: null,
+      [Symbol(async_id_symbol)]: 275,
+      [Symbol(kHandle)]: [TLSWrap],
+      [Symbol(kSetNoDelay)]: false,
+      [Symbol(lastWriteQueueSize)]: 0,
+      [Symbol(timeout)]: null,
+      [Symbol(kBuffer)]: null,
+      [Symbol(kBufferCb)]: null,
+      [Symbol(kBufferGen)]: null,
+      [Symbol(kCapture)]: false,
+      [Symbol(kBytesRead)]: 0,
+      [Symbol(kBytesWritten)]: 0,
+      [Symbol(connect-options)]: [Object],
+      [Symbol(RequestTimeout)]: undefined
+    },
+    _consuming: false,
+    _dumped: false,
+    req: ClientRequest {
+      _events: [Object: null prototype],
+      _eventsCount: 5,
+      _maxListeners: undefined,
+      outputData: [],
+      outputSize: 0,
+      writable: true,
+      destroyed: false,
+      _last: true,
+      chunkedEncoding: false,
+      shouldKeepAlive: false,
+      maxRequestsOnConnectionReached: false,
+      _defaultKeepAlive: true,
+      useChunkedEncodingByDefault: true,
+      sendDate: false,
+      _removedConnection: false,
+      _removedContLen: false,
+      _removedTE: false,
+      _contentLength: 0,
+      _hasBody: true,
+      _trailer: '',
+      finished: true,
+      _headerSent: true,
+      _closed: false,
+      socket: [TLSSocket],
+      _header: 'POST /v1/playlists/22kCyu9ySxM5PIaLjqxjyd/tracks?uris= HTTP/1.1\r\n' +
+        'Authorization: Bearer BQBVGK2yoGhZJhIUbxb08FcpHIWIhNJ0c_U0v7_cHo65Bpd9uj0ek6C1Wl1fDRQtI6GP34bLgpwduF1EfPi4OTMiRdsdPGt4PPgDT3odrRi2yqZq9cNTdc96BAd4d-5UwXVqWjdfDz_0StsamPrrQti3G6gBqo95dGLvvmbwMLqqX5xtl4KhUmX8y_i2phyyj-y4iGFFssrRFtTN_VqcaOcdfbZhQCnXXJSUt8ce9M8MGLib\r\n' +
+        'Content-Type: application/json\r\n' +
+        'host: api.spotify.com\r\n' +
+        'accept: application/json\r\n' +
+        'content-length: 0\r\n' +
+        'Connection: close\r\n' +
+        '\r\n',
+      _keepAliveTimeout: 0,
+      _onPendingData: [Function: nop],
+      agent: [Agent],
+      socketPath: undefined,
+      method: 'POST',
+      maxHeaderSize: undefined,
+      insecureHTTPParser: undefined,
+      path: '/v1/playlists/22kCyu9ySxM5PIaLjqxjyd/tracks?uris=',
+      _ended: true,
+      res: [Circular *1],
+      aborted: false,
+      timeoutCb: null,
+      upgradeOrConnect: false,
+      parser: null,
+      maxHeadersCount: null,
+      reusedSocket: false,
+      host: 'api.spotify.com',
+      protocol: 'https:',
+      [Symbol(kCapture)]: false,
+      [Symbol(kNeedDrain)]: false,
+      [Symbol(corked)]: 0,
+      [Symbol(kOutHeaders)]: [Object: null prototype]
+    },
+    request: Request {
+      _events: [Object: null prototype],
+      _eventsCount: 5,
+      _maxListeners: undefined,
+      method: 'POST',
+      headers: [Object],
+      readable: true,
+      writable: true,
+      explicitMethod: true,
+      _qs: [Querystring],
+      _auth: [Auth],
+      _oauth: [OAuth],
+      _multipart: [Multipart],
+      _redirect: [Redirect],
+      _tunnel: [Tunnel],
+      _rp_resolve: [Function (anonymous)],
+      _rp_reject: [Function (anonymous)],
+      _rp_promise: [Promise [Object]],
+      _rp_callbackOrig: undefined,
+      callback: [Function (anonymous)],
+      _rp_options: [Object],
+      setHeader: [Function (anonymous)],
+      hasHeader: [Function (anonymous)],
+      getHeader: [Function (anonymous)],
+      removeHeader: [Function (anonymous)],
+      localAddress: undefined,
+      pool: {},
+      dests: [],
+      __isRequestRequest: true,
+      _callback: [Function: RP$callback],
+      uri: [Url],
+      proxy: null,
+      tunnel: true,
+      setHost: true,
+      originalCookieHeader: undefined,
+      _disableCookies: true,
+      _jar: undefined,
+      port: 443,
+      host: 'api.spotify.com',
+      path: '/v1/playlists/22kCyu9ySxM5PIaLjqxjyd/tracks?uris=',
+      _json: true,
+      httpModule: [Object],
+      agentClass: [Function: Agent],
+      agent: [Agent],
+      _started: true,
+      href: 'https://api.spotify.com/v1/playlists/22kCyu9ySxM5PIaLjqxjyd/tracks?uris=',
+      req: [ClientRequest],
+      ntick: true,
+      response: [Circular *1],
+      originalHost: 'api.spotify.com',
+      originalHostHeaderName: 'host',
+      responseContent: [Circular *1],
+      _destdata: true,
+      _ended: true,
+      _callbackCalled: true,
+      [Symbol(kCapture)]: false
+    },
+    toJSON: [Function: responseToJSON],
+    caseless: Caseless { dict: [Object] },
+    body: { error: [Object] },
+    [Symbol(kCapture)]: false,
+    [Symbol(kHeaders)]: {
+      'content-type': 'application/json; charset=utf-8',
+      'cache-control': 'private, max-age=0',
+      'x-robots-tag': 'noindex, nofollow',
+      'access-control-allow-origin': '*',
+      'access-control-allow-headers': 'Accept, App-Platform, Authorization, Content-Type, Origin, Retry-After, Spotify-App-Version, X-Cloud-Trace-Context, client-token, content-access-token',
+      'access-control-allow-methods': 'GET, POST, OPTIONS, PUT, DELETE, PATCH',
+      'access-control-allow-credentials': 'true',
+      'access-control-max-age': '604800',
+      'content-length': '79',
+      'strict-transport-security': 'max-age=31536000',
+      'x-content-type-options': 'nosniff',
+      vary: 'Accept-Encoding',
+      date: 'Thu, 02 Jun 2022 04:59:46 GMT',
+      server: 'envoy',
+      via: 'HTTP/2 edgeproxy, 1.1 google',
+      'alt-svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000',
+      connection: 'close'
+    },
+    [Symbol(kHeadersCount)]: 34,
+    [Symbol(kTrailers)]: null,
+    [Symbol(kTrailersCount)]: 0,
+    [Symbol(RequestTimeout)]: undefined
+  }
+}
+spotify:track:7amfzQUdzzyMw1fjmDqvkv
+spotify:track:5b6enCVP67LsqqrfTs6rxr
+spotify:track:4fouWK6XVHhzl78KzQ1UjL
+spotify:track:0TCmhnbMpw5zwPsTvlXTJi
+spotify:track:7wDRRy5mceIs7tq2Ep27eu
+spotify:track:5902W4uHWzhtOff1UK7the
+spotify:track:4A8cWXxKfIL3lAyUDzXbCF
+spotify:track:3Kkjo3cT83cw09VJyrLNwX
+spotify:track:3smlpsXoDcTvDqHZTYfJLe
+spotify:track:4qXKkOZ691yYgQu4Lunrds
+spotify:track:6V8UEh7aSmuh1qxe1HnNnE
+spotify:track:7MC4XR9M9amdmKQr2iDF7i
+spotify:track:6I3mqTwhRpn34SLVafSH7G
+spotify:track:5ZF6l3xKi3m6YK2dDXAsR5
+spotify:track:5Z9KJZvQzH6PFmb8SNkxuk
+spotify:track:2JvOl3MV86yQNwRlBlX44z
+spotify:track:6N1K5OVVCopBjGViHs2IvP
+spotify:track:3DarAbFujv6eYNliUTyqtz
+spotify:track:3o9kpgkIcffx0iSwxhuNI2
+spotify:track:4LRPiXqCikLlN15c3yImP7
+spotify:track:3PfIrDoz19wz7qK7tYeu62
+spotify:track:0U1W2LZVUX7qTm7dDpqxh6
+spotify:track:6YiFO4Z74jjyJXWfqLH0Gy
+spotify:track:4rPkN1FMzQyFNP9cLUGIIB
+spotify:track:5JNzDrm1bQqIfsx1sS7io4
+spotify:track:35mvY5S1H3J2QZyna3TFe0
+spotify:track:6SGVneMoiyfO8PrnfIiSPd
+spotify:track:0IuVhCflrQPMGRrOyoY5RW
+spotify:track:18XlJEroUwFo0tLZxscgXE
+spotify:track:0siYMEsGrzzzlWLXK5zJfS
+spotify:track:5ajjAnNRh8bxFvaVHzpPjh
+spotify:track:4cGqn0E8JCSY9gQllQj4Mf
+spotify:track:5N1fhrwPgvH1R2CWJ8FB7c
+spotify:track:6OGogr19zPTM4BALXuMQpF
+spotify:track:6zSpb8dQRaw0M1dK8PBwQz
+spotify:track:5Xw4cXHZ7J2rzDX5SWdusQ
+spotify:track:1nahzW3kfMuwReTka28tH5
+spotify:track:6k5vdsmeY5yFWLcKhMBIsN
+spotify:track:0e8nrvls4Qqv5Rfa2UhqmO
+spotify:track:0gplL1WMoJ6iYaPgMCL0gX
+spotify:track:58HvfVOeJY7lUuCqF0m3ly
+spotify:track:0KQRhak4Irr2CKxgQ9U6ay
+spotify:track:6HU7h9RYOaPRFeh0R3UeAr
+spotify:track:52xJxFP6TqMuO4Yt0eOkMz
+spotify:track:0dj5O3Nc6ONKWNd8mErvND
+spotify:track:4iJyoBOLtHqaGxP12qzhQI
+spotify:track:16mFtGFLstwAxII0hUknUk
+spotify:track:0vR2rIVORmgeKiGIgNT0fV
+spotify:track:5nujrmhLynf4yMoMtj8AQF
+spotify:track:4Lt6GXGzYsa1tgkv3nGSTm
+spotify:track:5zFglKYiknIxks8geR8rcL
+spotify:track:61Emqg95O9zo1GNOcyxq4Y
+spotify:track:63eV5hreY9feQP2CmYavpj
+spotify:track:7jvCeWOSnJs2N3spqobWnO
+spotify:track:760jhRscwGbIIe1m1IIQpU
+spotify:track:4ZtFanR9U6ndgddUvNcjcG
+spotify:track:3yMC1KsTwh0ceXdIe4QQAQ
+spotify:track:3XoflnowYPFRPOh3uFvHcm
+spotify:track:4SqWKzw0CbA05TGszDgMlc
+spotify:track:7GV9AhX95fwBp063HCnS9O
+spotify:track:0VjIjW4GlUZAMYd2vXMi3b
+spotify:track:6LL5S3DGrUJ6cZRuDefguP
+spotify:track:4L6pjwCBddW63fSgup6zm0
+spotify:track:1ei3hzQmrgealgRKFxIcWn
+spotify:track:1jzJQlaWgu7ZYqRldXXFRD
+spotify:track:0y60itmpH0aPKsFiGxmtnh
+spotify:track:0eu4C55hL6x29mmeAjytzC
+spotify:track:3FAJ6O0NOHQV8Mc5Ri6ENp
+spotify:track:6UelLqGlWMcVH1E5c4H7lY
+spotify:track:17adc2E0JJEldvPiILxIlt
+spotify:track:0U372D2pbraSnrTFxSYlNj
+spotify:track:1daDRI9ahBonbWD8YcxOIB
+spotify:track:3IzdgfOLxHdjB4qGgW82sP
+spotify:track:02MWAaffLxlfxAUY7c5dvx
+spotify:track:2gMXnyrvIjhVBUZwvLZDMP
+spotify:track:2UbVnbE5FH6008mAm6Mmgw
+spotify:track:1fbd0C9jtQfXjl5i3K1Sjw
+spotify:track:3uUuGVFu1V7jTQL60S1r8z
+spotify:track:5dGnR6HfR0HHqcyt6PkcAP
+spotify:track:59zbXPD0j7JxsVVm480g3b
+spotify:track:1mWdTewIgB3gtBM3TOSFhB
+spotify:track:0sBJA2OCEECMs0HsdIQhvR
+spotify:track:5wANPM4fQCJwkGd4rN57mH
+spotify:track:5PjdY0CKGZdEuoNab3yDmX
+spotify:track:2aI21FnmY7TJVKeMaoQZ0t
+spotify:track:2gQPv5jvVPqU2a9HhMNO1v
+spotify:track:1mSdbey7RstGLY2udgXv74
+spotify:track:6y6xhAgZjvxy5kR5rigpY3
+spotify:track:3fGW43fnu3OHEw6ohTC2Bw
+spotify:track:6nV2dFZXpv1JlqDWBeTXRl
+spotify:track:02VBYrHfVwfEWXk5DXyf0T
+spotify:track:1058fW9H3fZA6QjYCdOBad
+spotify:track:1SC5rEoYDGUK4NfG82494W
+spotify:track:45PF1Y3RcW5MK0jxWvhc4D
+spotify:track:1BSMpVGWs3v5BZKnAQziAc
+spotify:track:2psUZ3pOZZ95FHLgPvWv05
+spotify:track:5tanHrkEM84t1K4jzJgyDY
+spotify:track:2D4dV2KXDTszzJ3p3cFqhA
+spotify:track:5Q9DzNnrUCkJV1t1wWjYIX
+spotify:track:0jI3UBtxSzauH5ynyAuauv
