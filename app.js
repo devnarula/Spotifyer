@@ -148,7 +148,7 @@ app.post('/create_playlist', function(req, res){
 app.post('/searchyt',(req,res) => {
   var ytname = req.body.playlist.name;
   ytname = ytname.replace(/^https?:\/\//, '')
-  var url = `https://ea72-38-117-127-218.ngrok.io/playlistsearch/?url=${encodeURIComponent(ytname)}`;
+  var url = `https://728b-38-117-127-218.ngrok.io/playlistsearch/?url=${encodeURIComponent(ytname)}`;
   console.log(url)
   var ops = {
     url: url,
@@ -188,11 +188,9 @@ app.post('/searchyt',(req,res) => {
         if (i < arr.length-1) {
         uris += ','
         }
-        if (uris.length > 80) {
-          console.log("uris:",uris)
           var playlistid = req.cookies.playlist_id
           var addops = {
-          url: `https://api.spotify.com/v1/playlists/${playlistid}/tracks?uris=${encodeURIComponent(uris)}`,
+          url: `https://api.spotify.com/v1/playlists/${playlistid}/tracks?uris=${encodeURIComponent(uri)}`,
           method: 'POST',
           headers: {
             'Authorization': 'Bearer ' + req.cookies.access_token,
@@ -207,7 +205,6 @@ app.post('/searchyt',(req,res) => {
         .catch(er => {
           console.log("fuck failed to add the song to the playlist",er)
     })
-        }
       })
       .catch (err => {
         // console.log(songname)
