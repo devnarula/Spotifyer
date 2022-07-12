@@ -203,7 +203,7 @@ app.post('/searchyt',(req,res) => {
           console.log("yay added the songs")
         })
         .catch(er => {
-          console.log("fuck failed to add the song to the playlist",er)
+          console.log("failed to add the song to the playlist",er)
     })
       })
       .catch (err => {
