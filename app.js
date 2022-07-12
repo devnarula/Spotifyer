@@ -9,9 +9,9 @@ var bodyParser = require('body-parser');
 const { fdatasync } = require('fs');
 
 //credentials
-var client_id = '7438696c99124ed09dad18d320af4408'; // Your client id
-var client_secret = '97131d69252f41fbb077b277bb5d375d'; // Your secret
-var redirect_uri = 'http://localhost:8888/callback'; // Your redirect uri
+var client_id = ''; //  client id
+var client_secret = ''; // secret
+var redirect_uri = 'http://localhost:8888/callback'; // redirect uri
 var scope = 'user-read-private user-read-email playlist-modify-public playlist-modify-private';
 var username = ""
 
@@ -137,7 +137,7 @@ app.post('/create_playlist', function(req, res){
   .then(data => {
     // console.log(data);
     res.cookie(`playlist_id`,`${data.id}`)
-    res.render(__dirname + '/yt.html', {'name' : 'ur gay'});
+    res.render(__dirname + '/yt.html', {'name' : 'playlist name'});
   })
   .catch (err => {
     console.log(err);
